@@ -23,11 +23,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC    &shift_1_to_plus         &kp N2     &kp N3      &kp N4    &kp N5                         &kp N6  &kp N7    &kp N8    &kp N9  &kp N0  &kp GRAVE
-&kp TAB    &kp SEMICOLON  &kp COMMA  &kp PERIOD  &kp R     &kp Y                          &kp F   &kp G     &kp C     &kp O   &kp L   &kp SLASH
-&kp LCTRL  &kp A          &kp O      &kp E       &kp U     &kp I                          &kp D   &kp H     &kp T     &kp L   &kp S   &kp MINUS
-&kp LSHFT  &kp SQT        &kp Q      &kp J       &kp K     &kp X   &kp LBKT     &kp RBKT  &kp B   &kp M     &kp W     &kp V   &kp Z   &kp RSHFT
-                                     &kp LALT    &kp LGUI  &mo 1   &kp SPACE    &kp RET   &mo 2   &kp BSPC  &kp RGUI
+&kp ESC    &shift_1_to_plus   &shift_2_to_lbkt     &shift_3_to_lbrc      &shift_4_to_lpar    &shift_5_to_amp                         &shift_6_to_pipe  &shift_7_to_rpar    &shift_8_to_rbrc    &shift_9_to_rbkt  &shift_0_to_ast  &shift_equal_to_grave
+&kp TAB    &kp SEMICOLON      &kp COMMA  &kp PERIOD  &kp P     &kp Y                          &kp F   &kp G     &kp C     &kp O   &kp L   &kp SLASH
+&kp LCTRL  &kp A              &kp O      &kp E       &kp U     &kp I                          &kp D   &kp H     &kp T     &kp L   &kp S   &kp MINUS
+&kp LSHFT  &kp SQT            &kp Q      &kp J       &kp K     &kp X   &kp LBKT     &kp RBKT  &kp B   &kp M     &kp W     &kp V   &kp Z   &kp RSHFT
+                                         &kp LALT    &kp LGUI  &mo 1   &kp SPACE    &kp RET   &mo 2   &kp BSPC  &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
