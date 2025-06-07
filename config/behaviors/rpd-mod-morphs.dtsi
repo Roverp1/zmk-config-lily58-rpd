@@ -1,0 +1,11 @@
+/ {
+  behaviors {
+    shift_1_to_plus: shift_1_to_plus {
+    compatible = "zmk,behavior-mod-morph";
+    label = "shift_1_to_plus";
+    #binding-cells = <0>;
+    bindings = <&kp N1>, <&kp PLUS>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+  };
+};
