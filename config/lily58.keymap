@@ -42,7 +42,7 @@
   &kp TAB     &kp SEMICOLON      &kp COMMA          &kp PERIOD         &kp P              &kp Y                &kp F              &kp G              &kp C              &kp R              &kp L            &kp SLASH
   &kp LCTRL   &thrm_l LGUI A     &thrm_l LALT O     &thrm_sft_l LSHFT E &thrm_l LCTRL U   &kp I                &kp D              &thrm_r RCTRL H     &thrm_sft_r RSHFT T &thrm_r LALT N    &thrm_r RGUI S   &kp MINUS
   &kp LSHFT   &kp SQT            &kp Q              &kp J              &kp K              &kp X                &kp CAPS           &kp RBKT           &kp B              &kp M              &kp W            &kp V            &kp Z         &kp RSHFT
-                              &kp LALT &kp LGUI &mo 2   &kp SPACE   &kp RET    &mo 1     &kp BSPC  &kp RALT
+                              &kp LALT &kp LGUI &mo 1   &kp SPACE   &kp RET    &mo 2     &kp BSPC  &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -69,20 +69,20 @@
         };
 
         raise_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
-            // |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  <-  |   v   |   ^   |  ->  |       |       |
-            // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
-            //                     |      |      |      |        |  |       |      |       |       |
+            // ----------------------------------------------------------------------------------------------------------------------
+            // | BT_CLR |       |       |       |       |       |                   |       |       |       |       |       |       |
+            // |        | ←SCRL | ↓SCRL | ↑SCRL | →SCRL |       |                   |       | RCLK  | MCLK  | LCLK  |       |       |
+            // | CAPS   | ←MV   | ↓MV   | ↑MV   | →MV   |       |                   | ←     | ↓     | ↑     | →     |       |       |
+            // |        |       |       |       |       |       |       |   |       |       |       |       |       |       |       |
+            //                  |       |       |       |       |       |   |       |       |       |
 
             display-name = "Raise";
             bindings = <
-&bt BT_CLR     &trans  &trans  &trans   &trans   &trans                     &msc SCRL_LEFT       &msc SCRL_DOWN     &msc SCRL_UP     &msc SCRL_RIGHT    &trans     &trans
-&trans  &trans  &trans  &trans   &trans   &trans                     &mmv MOVE_LEFT       &mmv MOVE_DOWN     &mmv MOVE_UP     &mmv MOVE_RIGHT    &trans     &trans
-&trans     &trans  &mkp RCLK  &mkp MCLK   &mkp LCLK   &trans                     &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT    &trans  &trans
+&bt BT_CLR     &trans  &trans  &trans   &trans   &trans             &trans  &trans  &trans   &trans    &trans     &trans
+&trans  &msc SCRL_LEFT       &msc SCRL_DOWN     &msc SCRL_UP     &msc SCRL_RIGHT   &trans                    &trans  &mkp LCLK  &mkp MCLK   &mkp RCLK    &trans     &trans
+&kp CAPS     &mmv MOVE_LEFT       &mmv MOVE_DOWN     &mmv MOVE_UP     &mmv MOVE_RIGHT   &trans      &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT    &trans  &trans
 &trans     &trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans   &trans
-                           &trans   &trans   &trans   &trans    &trans  &trans       &trans     &trans
+                         &trans   &trans   &trans   &trans       &trans  &trans       &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
