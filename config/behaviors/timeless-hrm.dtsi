@@ -51,8 +51,8 @@
 
     thrm_sft_l: home_row_mods_shift_left {
       compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <1>;
-      bindings = <&kp LSHFT>, <&kp>;
+      #binding-cells = <2>;
+      bindings = <&kp>, <&kp>;
 
       flavor = "balanced";
       tapping-term-ms = <HRM_TAPPING_TERM>;
@@ -65,8 +65,8 @@
 
     thrm_sft_r: home_row_mods_shift_right {
       compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <1>;
-      bindings = <&kp RSHFT>, <&kp>;
+      #binding-cells = <2>;
+      bindings = <&kp>, <&kp>;
 
       flavor = "balanced";
       tapping-term-ms = <HRM_TAPPING_TERM>;
