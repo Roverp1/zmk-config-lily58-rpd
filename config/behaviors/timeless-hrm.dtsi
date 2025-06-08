@@ -1,6 +1,6 @@
 #include "zmk-helpers/key-labels/lily58.h"
 
-#define HRM_TAPPING_TERM 250
+#define HRM_TAPPING_TERM 300
 #define HRM_QUICK_TAP 170
 #define HRM_PRIOR_IDLE_REG 150
 #define HRM_PRIOR_IDLE_SFT 100
