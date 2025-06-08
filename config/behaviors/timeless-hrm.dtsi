@@ -29,6 +29,7 @@
       flavor = "balanced";
       tapping-term-ms = <HRM_TAPPING_TERM>;
       quick-tap-ms = <HRM_QUICK_TAP>;
+      require-prior-idle-ms = <HRM_PRIOR_IDLE_REG>;
 
       hold-trigger-key-positions = <KEYS_R KEYS_THUMBS>;
       hold-trigger-on-release;
@@ -42,6 +43,35 @@
       flavor = "balanced";
       tapping-term-ms = <HRM_TAPPING_TERM>;
       quick-tap-ms = <HRM_QUICK_TAP>;
+      require-prior-idle-ms = <HRM_PRIOR_IDLE_REG>;
+
+      hold-trigger-key-positions = <KEYS_L KEYS_THUMBS>;
+      hold-trigger-on-release;
+    };
+
+    thrm_sft_l: home_row_mods_shift_left {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <1>;
+      bindings = <&kp LSHFT>, <&kp>;
+
+      flavor = "balanced";
+      tapping-term-ms = <HRM_TAPPING_TERM>;
+      quick-tap-ms = <HRM_QUICK_TAP>;
+      require-prior-idle-ms = <HRM_PRIOR_IDLE_SFT>;
+
+      hold-trigger-key-positions = <KEYS_R KEYS_THUMBS>;
+      hold-trigger-on-release;
+    };
+
+    thrm_sft_r: home_row_mods_shift_right {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <1>;
+      bindings = <&kp RSHFT>, <&kp>;
+
+      flavor = "balanced";
+      tapping-term-ms = <HRM_TAPPING_TERM>;
+      quick-tap-ms = <HRM_QUICK_TAP>;
+      require-prior-idle-ms = <HRM_PRIOR_IDLE_SFT>;
 
       hold-trigger-key-positions = <KEYS_L KEYS_THUMBS>;
       hold-trigger-on-release;
