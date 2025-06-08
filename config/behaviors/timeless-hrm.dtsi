@@ -33,5 +33,18 @@
       hold-trigger-key-positions = <KEYS_R KEYS_THUMBS>;
       hold-trigger-on-release;
     };
-  }
-}
+
+    thrm_r: home_row_mods_right  {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      bindings = <&kp>, <&kp>;
+
+      flavor = "balanced";
+      tapping-term-ms = <HRM_TAPPING_TERM>;
+      quick-tap-ms = <HRM_QUICK_TAP>;
+
+      hold-trigger-key-positions = <KEYS_L KEYS_THUMBS>;
+      hold-trigger-on-release;
+    };
+  };
+};
