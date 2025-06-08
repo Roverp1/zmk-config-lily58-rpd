@@ -21,14 +21,14 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC    &shift_1_to_plus   &shift_2_to_lbkt     &shift_3_to_lbrc      &shift_4_to_lpar    &shift_5_to_amp                         &shift_6_to_pipe  &shift_7_to_rpar    &shift_8_to_rbrc    &shift_9_to_rbkt  &shift_0_to_ast  &shift_equal_to_grave
+&kp ESC    &shift_1_to_plus   &shift_2_to_lbkt     &shift_3_to_lbrc      &shift_4_to_lpar    &shift_5_to_amp                         &shift_6_to_pipe  &shift_7_to_rpar    &shift_8_to_rbrc    &shift_9_to_rbkt  &shift_0_to_ast  &kp BSPC
 
 &kp TAB    &kp SEMICOLON      &kp COMMA  &kp PERIOD  &kp P     &kp Y                          &kp F   &kp G     &kp C     &kp R   &kp L   &kp SLASH
 
 &kp LCTRL  &thrm_l LGUI A     &thrm_l LALT O      &thrm_sft_l LSHFT E       &thrm_l LCTRL U     &kp I                          &kp D   &thrm_r RCTRL H     &thrm_sft_r RSHFT T     &thrm_r LALT N   &thrm_r RGUI S   &kp MINUS
 
-&kp LSHFT  &kp SQT            &kp Q      &kp J       &kp K     &kp X   &kp LBKT     &kp RBKT  &kp B   &kp M     &kp W     &kp V   &kp Z   &kp RSHFT
-                                         &kp LALT    &kp LGUI  &mo 1   &kp SPACE    &kp BSPC   &mo 2   &kp RET  &kp RALT
+&kp LSHFT  &kp SQT            &kp Q      &kp J       &kp K     &kp X   &kp CAPS     &kp RBKT  &kp B   &kp M     &kp W     &kp V   &kp Z   &kp RSHFT
+                                         &kp LALT    &kp LGUI  &mo 1   &kp SPACE    &kp RET   &mo 2   &kp BSPC  &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
