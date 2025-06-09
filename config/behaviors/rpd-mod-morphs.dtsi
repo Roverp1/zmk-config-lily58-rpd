@@ -10,8 +10,9 @@
         shift_1_to_plus: shift_1_to_plus {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&shift_1_to_plus_plain>, <&kp N1>;
+            bindings = <&kp N1>, <&shift_1_to_plus_plain>;
             mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
         shift_2_to_lbkt: shift_2_to_lbkt {
