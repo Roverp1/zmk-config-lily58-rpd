@@ -3,8 +3,8 @@
 #include <dt-bindings/zmk/keys.h>
 
 // for mouse configuration
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 15
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1250
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 #include <dt-bindings/zmk/pointing.h>
 
 #include "zmk-helpers/helper.h"
@@ -62,7 +62,7 @@
 &kp DOLLAR  &kp PLUS  &kp LBKT  &kp LBRC  &kp LPAR  &kp AMPS              &kp PIPE  &kp RPAR  &kp RBRC  &kp RBKT  &kp STAR  &kp EQUAL
 &kp TILDE   &kp N1  &kp N2  &kp N3   &kp N4   &kp N5                      &kp N6       &kp N7     &kp N8     &kp N9    &kp N0  &kp GRAVE
 &kp LCTRL  &trans  &trans  &kp PERCENT &kp EXCL  &kp BSLH &trans        &trans &kp HASH  &kp AT &kp CARET  &trans  &trans  &trans
-                            &trans    &trans    &trans    &trans            &kp BSPC   &trans    &trans    &trans
+                            &trans    &trans    &trans    &trans        &kp BSPC   &trans    &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -73,7 +73,7 @@
             // | BT_CLR |       |       |       |       |       |                   |       |       |       |       |       |       |
             // |        | ←SCRL | ↓SCRL | ↑SCRL | →SCRL |       |                   |       | RCLK  | MCLK  | LCLK  |       |       |
             // | CAPS   | ←MV   | ↓MV   | ↑MV   | →MV   |       |                   | ←     | ↓     | ↑     | →     |       |       |
-            // |        |       |       |       |       |       |       |   |       |       |       |       |       |       |       |
+            // |  CTRL  |       |       |       |       |       |       |   |       |       |       |       |       |       |       |
             //                  |       |       |       |       |       |   |       |       |       |
 
             display-name = "Raise";
@@ -81,7 +81,7 @@
 &bt BT_CLR     &trans  &trans  &trans   &trans   &trans             &trans  &trans  &trans   &trans    &trans     &trans
 &trans  &msc SCRL_LEFT       &msc SCRL_DOWN     &msc SCRL_UP     &msc SCRL_RIGHT   &trans                    &trans  &mkp LCLK  &mkp MCLK   &mkp RCLK    &trans     &trans
 &kp CAPS     &mmv MOVE_LEFT       &mmv MOVE_DOWN     &mmv MOVE_UP     &mmv MOVE_RIGHT   &trans      &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT    &trans  &trans
-&trans     &trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans   &trans
+&kp LCTRL   &trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans   &trans
                          &trans   &trans   &trans   &trans       &trans  &trans       &trans     &trans
             >;
 
