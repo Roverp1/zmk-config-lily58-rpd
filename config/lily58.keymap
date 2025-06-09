@@ -70,15 +70,15 @@
 
         raise_layer {
             // ----------------------------------------------------------------------------------------------------------------------
-            // | BT_CLR |       |       |       |       |       |                   |       |       |       |       |       |       |
+            // | BT_CLR |       |       |       |       | BOOTL |                   | BOOTL |       |       |       |       |       |
             // |        | ←SCRL | ↓SCRL | ↑SCRL | →SCRL |       |                   |       | RCLK  | MCLK  | LCLK  |       |       |
-            // | CAPS   | ←MV   | ↓MV   | ↑MV   | →MV   |       |                   | ←     | ↓     | ↑     | →     |       |       |
+            // |  CAPS  | ←MV   | ↓MV   | ↑MV   | →MV   |       |                   | ←     | ↓     | ↑     | →     |       |       |
             // |  CTRL  |       |       |       |       |       |       |   |       |       |       |       |       |       |       |
             //                  |       |       |       |       |       |   |       |       |       |
 
             display-name = "Raise";
             bindings = <
-&bt BT_CLR     &trans  &trans  &trans   &trans   &trans             &trans  &trans  &trans   &trans    &trans     &trans
+&bt BT_CLR     &trans  &trans  &trans   &trans   &bootloader             &bootloader  &trans  &trans   &trans    &trans     &trans
 &trans  &msc SCRL_LEFT       &msc SCRL_DOWN     &msc SCRL_UP     &msc SCRL_RIGHT   &trans                    &trans  &mkp LCLK  &mkp MCLK   &mkp RCLK    &trans     &trans
 &kp CAPS     &mmv MOVE_LEFT       &mmv MOVE_DOWN     &mmv MOVE_UP     &mmv MOVE_RIGHT   &trans      &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT    &trans  &trans
 &kp LCTRL   &trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans   &trans
