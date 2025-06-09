@@ -21,7 +21,7 @@
             #binding-cells = <0>;
             bindings = <&kp LBKT>, <&kp N2>;
             mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
         shift_2_to_lbkt: shift_2_to_lbkt {
@@ -29,7 +29,7 @@
             #binding-cells = <0>;
             bindings = <&kp N2>, <&shift_2_to_lbkt_plain>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
         shift_3_to_lbrc_plain: shift_3_to_lbrc_plain {
@@ -133,7 +133,7 @@
             #binding-cells = <0>;
             bindings = <&kp RBKT>, <&kp N9>;
             mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
         shift_9_to_rbkt: shift_9_to_rbkt {
@@ -141,7 +141,7 @@
             #binding-cells = <0>;
             bindings = <&kp N9>, <&shift_9_to_rbkt_plain>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
         shift_0_to_ast_plain: shift_0_to_ast_plain {
