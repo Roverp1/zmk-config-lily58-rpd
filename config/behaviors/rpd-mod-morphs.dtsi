@@ -7,7 +7,7 @@
             mods = <(MOD_LGUI|MOD_RGUI)>;
             keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
-        
+
         shift_1_to_plus: shift_1_to_plus {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -19,8 +19,9 @@
         shift_2_to_lbkt_plain: shift_2_to_lbkt_plain {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N2>, <&kp LBKT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LBKT>, <&kp N2>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
         shift_2_to_lbkt: shift_2_to_lbkt {
@@ -28,14 +29,15 @@
             #binding-cells = <0>;
             bindings = <&kp N2>, <&shift_2_to_lbkt_plain>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
         shift_3_to_lbrc_plain: shift_3_to_lbrc_plain {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N3>, <&kp LBRC>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp LBRC>, <&kp N3>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
         shift_3_to_lbrc: shift_3_to_lbrc {
@@ -43,63 +45,119 @@
             #binding-cells = <0>;
             bindings = <&kp N3>, <&shift_3_to_lbrc_plain>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+        };
+
+        shift_4_to_lpar_plain: shift_4_to_lpar_plain {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&kp N4>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
         shift_4_to_lpar: shift_4_to_lpar {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N4>, <&kp LPAR>;
+            bindings = <&kp N4>, <&shift_4_to_lpar_plain>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+        };
+
+        shift_5_to_amp_plain: shift_5_to_amp_plain {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp AMPERSAND>, <&kp N5>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
         shift_5_to_amp: shift_5_to_amp {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N5>, <&kp AMPERSAND>;
+            bindings = <&kp N5>, <&shift_5_to_amp_plain>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+        };
+
+        shift_6_to_pipe_plain: shift_6_to_pipe_plain {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PIPE>, <&kp N6>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
         shift_6_to_pipe: shift_6_to_pipe {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N6>, <&kp PIPE>;
+            bindings = <&kp N6>, <&shift_6_to_pipe_plain>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+        };
+
+        shift_7_to_rpar_plain: shift_7_to_rpar_plain {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RPAR>, <&kp N7>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
         shift_7_to_rpar: shift_7_to_rpar {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N7>, <&kp RPAR>;
+            bindings = <&kp N7>, <&shift_7_to_rpar_plain>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+        };
+
+        shift_8_to_rbrc_plain: shift_8_to_rbrc_plain {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RBRC>, <&kp N8>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
         shift_8_to_rbrc: shift_8_to_rbrc {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N8>, <&kp RBRC>;
+            bindings = <&kp N8>, <&shift_8_to_rbrc_plain>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+        };
+
+        shift_9_to_rbkt_plain: shift_9_to_rbkt_plain {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RBKT>, <&kp N9>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
         shift_9_to_rbkt: shift_9_to_rbkt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N9>, <&kp RBKT>;
+            bindings = <&kp N9>, <&shift_9_to_rbkt_plain>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+        };
+
+        shift_0_to_ast_plain: shift_0_to_ast_plain {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp ASTERISK>, <&kp N0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
         shift_0_to_ast: shift_0_to_ast {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N0>, <&kp ASTERISK>;
+            bindings = <&kp N0>, <&shift_0_to_ast_plain>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        shift_equal_to_grave: shift_equal_to_grave {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp EQUAL>, <&kp GRAVE>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
     };
 };
