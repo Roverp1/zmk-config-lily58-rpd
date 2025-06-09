@@ -15,18 +15,34 @@
             keep-mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
-        shift_2_to_lbkt: shift_2_to_lbkt {
+        shift_2_to_lbkt_plain: shift_2_to_lbkt_plain {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N2>, <&kp LBKT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        shift_3_to_lbrc: shift_3_to_lbrc {
+        shift_2_to_lbkt: shift_2_to_lbkt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N2>, <&shift_2_to_lbkt_plain>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        shift_3_to_lbrc_plain: shift_3_to_lbrc_plain {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N3>, <&kp LBRC>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        shift_3_to_lbrc: shift_3_to_lbrc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N3>, <&shift_3_to_lbrc_plain>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
         shift_4_to_lpar: shift_4_to_lpar {
