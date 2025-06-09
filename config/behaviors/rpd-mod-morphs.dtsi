@@ -3,16 +3,17 @@
         shift_1_to_plus_plain: shift_1_to_plus_plain {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N1>, <&kp PLUS>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp EQUAL>, <&kp N1>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
         
         shift_1_to_plus: shift_1_to_plus {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N1>, <&shift_1_to_plus_plain>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
         shift_2_to_lbkt_plain: shift_2_to_lbkt_plain {
