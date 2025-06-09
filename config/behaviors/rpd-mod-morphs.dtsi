@@ -1,10 +1,17 @@
 / {
     behaviors {
-        shift_1_to_plus: shift_1_to_plus {
+        shift_1_to_plus_plain: shift_1_to_plus_plain {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N1>, <&kp PLUS>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        
+        shift_1_to_plus: shift_1_to_plus {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&shift_1_to_plus_plain>, <&kp N1>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
         shift_2_to_lbkt: shift_2_to_lbkt {
