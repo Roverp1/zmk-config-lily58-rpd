@@ -43,7 +43,7 @@
 
             display-name = "Real Programmers Dvorak";
             bindings = <
-  &kp ESC     &shift_1_to_plus    &shift_2_to_lbkt    uc&shift_3_to_lbrc    &shift_4_to_lpar    &shift_5_to_amp                                 &shift_6_to_pipe    &shift_7_to_rpar  &shift_8_to_rbrc      &shift_9_to_rbkt    &shift_0_to_ast   &kp BSPC
+  &kp ESC     &shift_1_to_plus    &shift_2_to_lbkt    &shift_3_to_lbrc      &shift_4_to_lpar    &shift_5_to_amp                                 &shift_6_to_pipe    &shift_7_to_rpar  &shift_8_to_rbrc      &shift_9_to_rbkt    &shift_0_to_ast   &kp BSPC
   &kp TAB     &kp SEMICOLON       &kp COMMA           &kp PERIOD            &kp P               &kp Y                                           &kp F               &kp G             &kp C                 &kp R               &kp L             &kp SLASH
   &kp LSHFT   &thrm_l LGUI A      &thrm_l LALT O      &thrm_sft_l LSHFT E   &thrm_l LCTRL U     &kp I                                           &kp D               &thrm_r RCTRL H   &thrm_sft_r RSHFT T   &thrm_r LALT N      &thrm_r RGUI S    &kp MINUS
   &kp LCTRL   &kp SQT             &kp Q               &kp J                 &kp K               &kp X             &kp CAPS          &kp RBKT    &kp B               &kp M             &kp W                 &kp V               &kp Z             &kp RSHFT
@@ -83,11 +83,11 @@
 
             display-name = "Raise";
             bindings = <
-&bt BT_CLR     &trans  &trans  &trans   &trans   &bootloader             &bootloader  &trans  &trans   &trans    &trans     &trans
-&trans  &msc SCRL_LEFT       &msc SCRL_DOWN     &msc SCRL_UP     &msc SCRL_RIGHT   &trans                    &trans  &mkp LCLK  &mkp MCLK   &mkp RCLK    &trans     &trans
-&kp CAPS     &mmv MOVE_LEFT       &mmv MOVE_DOWN     &mmv MOVE_UP     &mmv MOVE_RIGHT   &trans      &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT    &trans  &trans
-&trans   &trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans   &trans
-                         &trans   &trans   &trans   &trans       &trans  &trans       &trans     &trans
+&bt BT_CLR    &trans            &trans            &trans          &trans            &bootloader                     &bootloader &trans  &trans   &trans    &trans     &trans
+&trans        &msc SCRL_LEFT    &msc SCRL_DOWN    &msc SCRL_UP    &msc SCRL_RIGHT   &trans                          &trans      &mkp LCLK  &mkp MCLK   &mkp RCLK    &trans     &trans
+&kp CAPS      &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT   &trans                          &kp LEFT    &kp DOWN   &kp UP    &kp RIGHT    &trans  &trans
+&trans        &trans            &trans            &trans          &trans            &trans    &trans        &trans  &trans      &trans  &trans  &trans  &trans   &trans
+                                                  &trans          &trans            &trans    &trans        &trans  &trans      &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
