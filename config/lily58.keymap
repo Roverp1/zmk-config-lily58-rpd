@@ -12,6 +12,11 @@
 #include "behaviors/rpd-mod-morphs.dtsi"
 #include "behaviors/timeless-hrm.dtsi"
 
+#define RPD 0
+#define LOWER 1
+#define RAISE 2
+#define QWERTY 3
+
 
 /*                                      58 KEY MATRIX / LAYOUT MAPPING
 
@@ -38,11 +43,11 @@
 
             display-name = "Real Programmers Dvorak";
             bindings = <
-  &kp ESC     &shift_1_to_plus   &shift_2_to_lbkt   &shift_3_to_lbrc   &shift_4_to_lpar   &shift_5_to_amp      &shift_6_to_pipe   &shift_7_to_rpar   &shift_8_to_rbrc   &shift_9_to_rbkt   &shift_0_to_ast   &kp BSPC
-  &kp TAB     &kp SEMICOLON      &kp COMMA          &kp PERIOD         &kp P              &kp Y                &kp F              &kp G              &kp C              &kp R              &kp L            &kp SLASH
-  &kp LSHFT   &thrm_l LGUI A     &thrm_l LALT O     &thrm_sft_l LSHFT E &thrm_l LCTRL U   &kp I                &kp D              &thrm_r RCTRL H     &thrm_sft_r RSHFT T &thrm_r LALT N    &thrm_r RGUI S   &kp MINUS
-  &kp LCTRL   &kp SQT            &kp Q              &kp J              &kp K              &kp X                &kp CAPS           &kp RBKT           &kp B              &kp M              &kp W            &kp V            &kp Z         &kp RSHFT
-                              &kp LGUI &kp LALT &mo 1   &kp SPACE   &kp RET    &mo 2     &kp BSPC  &kp RALT
+  &kp ESC     &shift_1_to_plus    &shift_2_to_lbkt    uc&shift_3_to_lbrc    &shift_4_to_lpar    &shift_5_to_amp                                 &shift_6_to_pipe    &shift_7_to_rpar  &shift_8_to_rbrc      &shift_9_to_rbkt    &shift_0_to_ast   &kp BSPC
+  &kp TAB     &kp SEMICOLON       &kp COMMA           &kp PERIOD            &kp P               &kp Y                                           &kp F               &kp G             &kp C                 &kp R               &kp L             &kp SLASH
+  &kp LSHFT   &thrm_l LGUI A      &thrm_l LALT O      &thrm_sft_l LSHFT E   &thrm_l LCTRL U     &kp I                                           &kp D               &thrm_r RCTRL H   &thrm_sft_r RSHFT T   &thrm_r LALT N      &thrm_r RGUI S    &kp MINUS
+  &kp LCTRL   &kp SQT             &kp Q               &kp J                 &kp K               &kp X             &kp CAPS          &kp RBKT    &kp B               &kp M             &kp W                 &kp V               &kp Z             &kp RSHFT
+                                                      &kp LGUI              &kp LALT            &mo LOWER         &kp SPACE         &kp RET     &mo RAISE           &kp BSPC          &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -70,10 +75,10 @@
 
         raise_layer {
             // ----------------------------------------------------------------------------------------------------------------------
-            // | BT_CLR |       |       |       |       | BOOTL |                   | BOOTL |       |       |       |       |       |
+            // | BT_CLR |       |       |       |       |       |                   |       |       |       |       |       |       |
             // |        | ←SCRL | ↓SCRL | ↑SCRL | →SCRL |       |                   |       | RCLK  | MCLK  | LCLK  |       |       |
             // |  CAPS  | ←MV   | ↓MV   | ↑MV   | →MV   |       |                   | ←     | ↓     | ↑     | →     |       |       |
-            // |  CTRL  |       |       |       |       |       |       |   |       |       |       |       |       |       |       |
+            // |  CTRL  |       |       |       |       |       | BOOTL |   | BOOTL |       |       |       |       |       |       |
             //                  |       |       |       |       |       |   |       |       |       |
 
             display-name = "Raise";
@@ -88,7 +93,24 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        extra_1 { status = "reserved"; };
+        qwerty_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |       |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  RET  |
+// |       |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
+// |       |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
+// |       |  Z  |  X  |  C   |  V   |  B   |        |  |       |  N   |  M    |  ,    |  .   |   /   |       |
+//                     |      |      | LOWER|  SPACE |  | ENTER | RAISE|       |       |
+            display-name = "qwerty";
+            bindings = <
+&trans &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp RET
+&trans &kp Q  &kp W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
+&trans &kp A  &kp S  &kp D    &kp F    &kp G                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+&trans &kp Z  &kp X  &kp C    &kp V    &kp B  &trans       &trans &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &trans
+                 &trans &trans &mo LOWER  &kp SPACE  &kp RET  &mo RAISE  &trans &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
 
         extra_2 { status = "reserved"; };
 
