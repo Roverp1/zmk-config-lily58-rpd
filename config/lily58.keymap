@@ -7,7 +7,9 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 #include <dt-bindings/zmk/pointing.h>
 
+#define HOST_OS 1
 #include "zmk-helpers/helper.h"
+#include "zmk-helpers/unicode-chars/russian.dtsi"
 
 #include "behaviors/rpd-mod-morphs.dtsi"
 #include "behaviors/timeless-hrm.dtsi"
@@ -92,6 +94,17 @@
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
+
+        rus_layer {
+            display-name = "Russian";
+            bindings = <
+&kp ESC     &shift_1_to_plus    &shift_2_to_lbkt    &shift_3_to_lbrc    &shift_4_to_lpar    &shift_5_to_amp                             &shift_6_to_pipe    &shift_7_to_rpar    &shift_8_to_rbrc    &shift_9_to_rbkt &shift_0_to_ast &kp BSPC
+&kp TAB     &ru_yu              &ru_ts              &ru_u               &ru_kh              &ru_e                                       &ru_n               &ru_g               &ru_sh              &ru_shch         &ru_z           &ru_hard
+&kp CAPS    &ru_f               &ru_y               &ru_a               &ru_o               &ru_l                                       &ru_d               &ru_zh              &ru_e               &ru_soft         &ru_yeyo        &kp RET
+&kp LSFT    &ru_ya              &ru_ch              &ru_s               &ru_m               &ru_i             &trans          &trans    &ru_t               &ru_b               &ru_yo              &ru_r            &ru_p           &kp LSFT
+                                                    &kp LGUI            &kp LALT            &mo LOWER         &kp SPACE       &kp RET   &mo RAISE           &trans              &trans
+            >;
+          };
 
         lower_layer {
             // ------------------------------------------------------------------------------------------------------------
