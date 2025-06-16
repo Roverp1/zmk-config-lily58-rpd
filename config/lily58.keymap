@@ -50,7 +50,7 @@
   &kp TAB     &kp SEMICOLON       &kp COMMA           &kp PERIOD            &kp P               &kp Y                                           &kp F               &kp G             &kp C                 &kp R               &kp L             &kp SLASH
   &kp LSHFT   &thrm_l LGUI A      &thrm_l LALT O      &thrm_sft_l LSHFT E   &thrm_l LCTRL U     &kp I                                           &kp D               &thrm_r RCTRL H   &thrm_sft_r RSHFT T   &thrm_r LALT N      &thrm_r RGUI S    &kp MINUS
   &kp LCTRL   &kp SQT             &kp Q               &kp J                 &kp K               &kp X             &tog GamingRPD    &kp RBKT    &kp B               &kp M             &kp W                 &kp V               &kp Z             &kp RSHFT
-                                                      &kp LALT              &kp LGUI            &mo LOWER         &kp SPACE         &kp RET     &mo RAISE           &kp RCTRL          &kp RALT
+                                                      &kp LGUI              &kp LALT            &mo LOWER         &kp SPACE         &kp RET     &mo RAISE           &kp RCTRL          &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -98,10 +98,10 @@
         rus_layer {
             display-name = "Russian";
             bindings = <
-&kp ESC     &shift_1_to_plus    &shift_2_to_lbkt    &shift_3_to_lbrc    &shift_4_to_lpar    &shift_5_to_amp                             &shift_6_to_pipe    &shift_7_to_rpar    &shift_8_to_rbrc    &shift_9_to_rbkt &shift_0_to_ast &kp BSPC
-&kp TAB     &ru_yu              &ru_ts              &ru_u               &ru_kh              &ru_e                                       &ru_n               &ru_g               &ru_sh              &ru_shch         &ru_z           &ru_hard
-&kp CAPS    &ru_f               &ru_y               &ru_a               &ru_o               &ru_l                                       &ru_d               &ru_zh              &ru_e               &ru_soft         &ru_yeyo        &kp RET
-&kp LSFT    &ru_ya              &ru_ch              &ru_s               &ru_m               &ru_i             &trans          &trans    &ru_t               &ru_b               &ru_yo              &ru_r            &ru_p           &kp LSFT
+&kp ESC     &shift_1_to_plus    &shift_2_to_lbkt    &shift_3_to_lbrc    &shift_4_to_lpar    &shift_5_to_amp                             &shift_6_to_pipe    &shift_7_to_rpar    &shift_8_to_rbrc    &shift_9_to_rbkt    &shift_0_to_ast   &kp BSPC
+&kp TAB     &ru_y               &ru_ts              &ru_u               &ru_k               &ru_ye                                      &ru_n               &ru_g               &ru_sh              &ru_shch            &ru_z             &ru_kh
+&kp CAPS    &ru_f               &ru_bi              &ru_v               &ru_a               &ru_p                                       &ru_r               &ru_o               &ru_l               &ru_d               &ru_zh            &ru_e
+&kp LSFT    &ru_ya              &ru_ch              &ru_s               &ru_m               &ru_i             &trans          &trans    &ru_t               &ru_soft            &ru_b               &ru_yu              &ru_hard          &kp LSFT
                                                     &kp LGUI            &kp LALT            &mo LOWER         &kp SPACE       &kp RET   &mo RAISE           &trans              &trans
             >;
           };
@@ -109,18 +109,18 @@
         lower_layer {
             // ------------------------------------------------------------------------------------------------------------
             // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-            // |   $   |  ~  |  %  |  !   |  \   |      |                   |      |  #    |  @    |  ^   |   `   |   =   |
+            // |   $   |  ~  |  %  |  !   |  \   |  ,   |                   |  .   |  #    |  @    |  ^   |   `   |   =   |
             // |       |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
             // |  CTRL |  +  |  [  |  {   |  (   |  &   |        |  |       |  |   |  )    |  }    |  ]   |   *   |       |
             //                     |      |      |      |        |  | SPACE |      |       |       |
 
             display-name = "Lower";
             bindings = <
-&kp F1      &kp F2      &kp F3        &kp F4      &kp F5      &kp F6                        &kp F7      &kp F8      &kp F9    &kp F10     &kp F11     &kp F12
-&kp DOLLAR  &kp TILDE   &kp PERCENT   &kp EXCL    &kp BSLH    &trans                        &trans      &kp HASH    &kp AT    &kp CARET   &kp GRAVE   &kp EQUAL
-&trans      &kp N1      &kp N2        &kp N3      &kp N4      &kp N5                        &kp N6      &kp N7      &kp N8    &kp N9      &kp N0      &trans
-&trans      &kp PLUS    &kp LBKT      &kp LBRC    &kp LPAR    &kp AMPS  &trans      &trans  &kp PIPE    &kp RPAR    &kp RBRC  &kp RBKT    &kp STAR    &trans
-                                      &trans      &trans      &trans    &trans    &kp SPACE &trans      &trans      &trans
+&kp F1      &kp F2      &kp F3        &kp F4      &kp F5      &kp F6                        &kp F7        &kp F8      &kp F9    &kp F10     &kp F11     &kp F12
+&kp DOLLAR  &kp TILDE   &kp PERCENT   &kp EXCL    &kp BSLH    &kp COMMA                     &kp PERIOD    &kp HASH    &kp AT    &kp CARET   &kp GRAVE   &kp EQUAL
+&trans      &kp N1      &kp N2        &kp N3      &kp N4      &kp N5                        &kp N6        &kp N7      &kp N8    &kp N9      &kp N0      &trans
+&trans      &kp PLUS    &kp LBKT      &kp LBRC    &kp LPAR    &kp AMPS  &trans      &trans  &kp PIPE      &kp RPAR    &kp RBRC  &kp RBKT    &kp STAR    &trans
+                                      &trans      &trans      &trans    &trans    &kp SPACE &trans        &trans      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
