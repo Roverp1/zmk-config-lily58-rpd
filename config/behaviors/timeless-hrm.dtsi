@@ -66,5 +66,16 @@
       hold-trigger-key-positions = <KEYS_L KEYS_THUMBS>;
       hold-trigger-on-release;
     };
+
+    thumb_layer: thumb_layer {
+      compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        bindings = <&mo>, <&kp>;
+
+      flavor = "balanced";
+      tapping-term-ms = <HRM_TAPPING_TERM>;
+      quick-tap-ms = <HRM_QUICK_TAP>;
+      require-prior-idle-ms = <HRM_PRIOR_IDLE_SFT>;
+    };
   };
 };
