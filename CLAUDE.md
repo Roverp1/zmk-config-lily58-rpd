@@ -341,7 +341,162 @@ Every keyboard comes with a "default keymap". For additional examples, the [ZMK 
 
 ### Hold-Tap Behavior
 
-<!-- TODO: Add hold-tap documentation (mod-tap, layer-tap, timing configs) -->
+---
+title: Hold-Tap Behavior
+sidebar_label: Hold-Tap
+---
+
+## Summary
+
+A hold-tap behavior is defined using a "hold" behavior and a "tap" behavior.
+When the key is held, then it will output the hold behavior, and when it is tapped it will output the tap behavior.
+
+Various configuration options exist to allow fine-tuning of whether a particular key press will resolve in a hold or in a tap.
+Such configuration options determine how to treat "interrupts" when one key is pressed while a hold-tap has not been released yet, or how long a key should be held before being treated as a hold instead of a tap, and so on.
+
+ZMK predefines two hold-tap behaviors: [mod-tap](#mod-tap) and [layer-tap](#layer-tap).
+
+## Mod-Tap
+
+The "mod-tap" behavior sends a different [key press](key-press.md), depending on whether it's held or tapped.
+
+- If you hold the key for longer than 200ms or press any other key while it is held, the first keycode ("mod") is sent.
+- If you tap the key (release before 200ms), the second keycode ("tap") is sent.
+
+By default, mod-tap is configured with the ["hold-preferred" `flavor`](#interrupt-flavors).
+
+### Behavior Binding
+
+- Reference: `&mt`
+- Parameter #1: The keycode to be sent when held (usually a modifier), e.g. `LSHIFT`
+- Parameter #2: The keycode to sent when used as a tap, e.g. `A`, `B`.
+
+Example:
+
+```dts
+&mt LSHIFT A
+```
+
+### Configuration
+
+You can adjust the default [properties](#custom-hold-tap-configuration) of the mod-tap behavior using its node like so:
+
+```dts
+&mt {
+    tapping-term-ms = <200>; // This is the value already set by default
+};
+```
+
+## Layer-Tap
+
+The "layer-tap" behavior works similarly to the mod-tap behavior, but instead of outputting one of two keys, it activates a specified layer as its "hold" action.
+
+By default, layer-tap is configured with the ["tap-preferred" `flavor`](#interrupt-flavors).
+
+### Behavior Binding
+
+- Reference: `&lt`
+- Parameter: The layer number to enable while held, e.g. `1`
+- Parameter: The keycode to send when tapped, e.g. `A`
+
+Example:
+
+```dts
+&lt 3 SPACE
+```
+
+### Configuration
+
+You can adjust the default [properties](#custom-hold-tap-configuration) of the layer-tap behavior using its node like so:
+
+```dts
+&lt {
+    tapping-term-ms = <200>; // This is the value already set by default
+};
+```
+
+## Custom Hold-Tap Configuration
+
+### `tapping-term-ms`
+
+This value defines how long a key must be pressed to trigger the "hold" behavior, alongside other factors described in [interrupt flavors](#interrupt-flavors). The default is 200ms.
+
+```dts
+&mt {
+    tapping-term-ms = <140>;
+};
+```
+
+### Using different behavior types with hold-taps
+
+You can create instances of hold-taps invoking most [behavior types](../index.mdx#behaviors) for hold or tap actions, by referencing their node labels in the `bindings` value.
+The two parameters that are passed to the hold-tap in your keymap will be forwarded to the referred behaviors, first one to the hold behavior and second one to the tap.
+
+If you use behaviors that accept no parameters such as [mod-morphs](mod-morph.md) or [tap-dances](tap-dance.mdx), you can pass a dummy parameter value such as `0` to the hold-tap when you use it in your keymap.
+
+### Interrupt Flavors
+
+By default, when another key is pressed while a hold-tap is held, it will trigger the "hold" behavior even if `tapping-term-ms` has not been exceeded yet.
+We refer to the interaction of pressing one key while another is held as the "interrupt", and the way the hold-tap resolves is referred to as its "interrupt flavor".
+
+- The "hold-preferred" flavor triggers the hold behavior when the `tapping-term-ms` has expired or another key is pressed.
+- The "balanced" flavor will trigger the hold behavior when the `tapping-term-ms` has expired or another key is pressed _and_ released while the hold-tap is held.
+- The "tap-preferred" flavor triggers the hold behavior when the `tapping-term-ms` has expired. Pressing another key within `tapping-term-ms` does not affect the decision.
+- The "tap-unless-interrupted" flavor triggers a hold behavior only when another key is pressed before `tapping-term-ms` has expired. It triggers the tap behavior in all other situations.
+
+```dts
+&mt {
+    flavor = "balanced";
+};
+```
+
+### `quick-tap-ms`
+
+If you press a tapped hold-tap again within `quick-tap-ms` milliseconds of the first press, it will always trigger the tap behavior.
+This is useful for keys like backspace, where a quick tap-then-hold can be used to hold it down to delete long parts of text.
+
+```dts
+&mt {
+    quick-tap-ms = <150>;
+};
+```
+
+### `require-prior-idle-ms`
+
+If a hold-tap is pressed within `require-prior-idle-ms` of another non-modifier _key_ (not behavior), then the hold-tap will always resolve in a tap.
+This effectively disables the hold-tap when typing quickly, which can be quite useful for home-row mods.
+
+### Positional hold-tap and `hold-trigger-key-positions`
+
+Including `hold-trigger-key-positions` in your hold-tap definition turns on the positional hold-tap feature. With positional hold-tap enabled, if you press any key **not** listed in `hold-trigger-key-positions` before `tapping-term-ms` expires, it will produce a tap.
+
+Positional hold-tap is useful when used with home-row modifiers: for example, if you have a home-row modifier key in the left hand, by including only key positions from the right hand in `hold-trigger-key-positions`, you will only get hold behaviors during cross-hand key combinations.
+
+```dts
+&mt {
+    hold-trigger-key-positions = <1 2 3 4 5>;
+};
+```
+
+### `hold-trigger-on-release`
+
+If set, instead of the keys listed in `hold-trigger-key-positions` producing a tap when _pressed_ before `tapping-term-ms` expires, they instead produce a tap when _released_ before `tapping-term-ms` expires.
+
+```dts
+&mt {
+    hold-trigger-on-release;
+};
+```
+
+### `retro-tap`
+
+If `retro-tap` is enabled, the tap behavior is triggered when releasing the hold-tap key if no other key was pressed in the meantime.
+
+```dts
+&mt {
+    retro-tap;
+};
+```
 
 ### Mod-Morph Behavior
 
