@@ -12,13 +12,15 @@
 #include "behaviors/rpd-mod-morphs.dtsi"
 #include "behaviors/timeless-hrm.dtsi"
 
-#define QWERTY      0
-#define RPD         1
-#define GamingRPD   2
-#define LOWER       3
-#define RAISE       4
-#define LowerLower  5
-#define RaiseRaise  6
+#define QWERTY        0
+#define GamingQWERTY  1
+#define RPD           2
+#define GamingRPD     3
+#define LOWER         4
+#define RAISE         5
+#define LowerLower    6
+#define RaiseRaise    7
+#define RightSide     8
 
 
 
@@ -57,6 +59,30 @@
   &kp LSHFT   &thrm_l LGUI A   &thrm_l LALT S   &thrm_sft_l LSHFT D   &thrm_l LCTRL F   &kp G                                 &kp H       &thrm_r RCTRL J   &thrm_sft_r LSHFT K   &thrm_r LALT L   &thrm_r RGUI SEMI   &kp SQT
   &kp LCTRL   &kp Z            &kp X            &kp C                 &kp V             &kp B       &trans          &trans    &kp N       &kp M             &kp COMMA             &kp DOT          &kp FSLH            &kp RSHFT
                                                 &kp LGUI              &kp LALT          &mo LOWER   &kp SPACE       &kp RET   &mo RAISE   &kp RCTRL         &kp RALT
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+      };
+
+        qwerty_gaming_layer {
+            display-name = "Gaming qwerty";
+            bindings = <
+//    ┌──────┬───┬───┬──────┬──────┬──────────┐               ┌────────────┬──────┬──────┬───┬───┬───────┐
+//    │ esc  │ 1 │ 2 │  3   │  4   │    5     │               │     6      │  7   │  8   │ 9 │ 0 │ bspc  │
+//    ├──────┼───┼───┼──────┼──────┼──────────┤               ├────────────┼──────┼──────┼───┼───┼───────┤
+//    │ tab  │ Q │ W │  E   │  R   │    T     │               │     Y      │  U   │  I   │ O │ P │   [   │
+//    ├──────┼───┼───┼──────┼──────┼──────────┤               ├────────────┼──────┼──────┼───┼───┼───────┤
+//    │ lsft │ A │ S │  D   │  F   │    G     │               │     H      │  J   │  K   │ L │ ; │   '   │
+//    ├──────┼───┼───┼──────┼──────┼──────────┼─────┐   ┌─────┼────────────┼──────┼──────┼───┼───┼───────┤
+//    │ lctl │ Z │ X │  C   │  V   │    B     │     │   │     │     N      │  M   │  ,   │ . │ / │ &rsft │
+//    └──────┴───┴───┼──────┼──────┼──────────┼─────┤   ├─────┼────────────┼──────┼──────┼───┴───┴───────┘
+//                   │ lgui │ lalt │ mo LOWER │ spc │   │ ent │ mo raltISE │ rctl │ ralt │
+//                   └──────┴──────┴──────────┴─────┘   └─────┴────────────┴──────┴──────┘
+  &kp ESC     &kp N1   &kp N2   &kp N3     &kp N4     &kp N5                                &kp N6      &kp N7      &kp N8      &kp N9    &kp N0     &kp BSPC
+  &kp TAB     &kp Q    &kp W    &kp E      &kp R      &kp T                                 &kp Y       &kp U       &kp I       &kp O     &kp P      &kp LEFT_BRACKET
+  &kp LSHFT   &kp A    &kp S    &kp D      &kp F      &kp G                                 &kp H       &kp J       &kp K       &kp L     &kp SEMI   &kp SQT
+  &kp LCTRL   &kp Z    &kp X    &kp C      &kp V      &kp B       &trans          &trans    &kp N       &kp M       &kp COMMA   &kp DOT   &kp FSLH   &RSHFT
+                                &kp LGUI   &kp LALT   &mo LOWER   &kp SPACE       &kp RET   &mo RAISE   &kp RCTRL   &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -118,7 +144,7 @@
 //    ├─────┼────┼────┼─────┼─────┼─────┤               ├─────┼─────┼─────┼─────┼─────┼─────┤
 //    │  $  │ ~  │ %  │  !  │  \  │  ,  │               │  .  │  #  │  @  │  ^  │  `  │  =  │
 //    ├─────┼────┼────┼─────┼─────┼─────┤               ├─────┼─────┼─────┼─────┼─────┼─────┤
-//    │     │ 1  │ 2  │  3  │  4  │  5  │               │  6  │  7  │  8  │  9  │  0  │     │
+//    │     │ 1  │ 2  │  3  │  4  │  5  │               │  6  │  7  │  8  │  9  │  0  │  -  │
 //    ├─────┼────┼────┼─────┼─────┼─────┼─────┐   ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┤
 //    │     │ +  │ [  │  {  │  (  │  &  │     │   │     │  |  │  )  │  }  │  ]  │  *  │     │
 //    └─────┴────┴────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┴─────┴─────┘
@@ -126,7 +152,7 @@
 //                    └─────┴─────┴─────┴─────┘   └─────┴─────┴─────┴─────┘
   &kp F1       &kp F2      &kp F3        &kp F4     &kp F5     &kp F6                               &kp F7       &kp F8     &kp F9     &kp F10     &kp F11     &kp F12
   &kp DOLLAR   &kp TILDE   &kp PERCENT   &kp EXCL   &kp BSLH   &kp COMMA                            &kp PERIOD   &kp HASH   &kp AT     &kp CARET   &kp GRAVE   &kp EQUAL
-  &trans       &kp N1      &kp N2        &kp N3     &kp N4     &kp N5                               &kp N6       &kp N7     &kp N8     &kp N9      &kp N0      &trans
+  &trans       &kp N1      &kp N2        &kp N3     &kp N4     &kp N5                               &kp N6       &kp N7     &kp N8     &kp N9      &kp N0      &kp MINUS
   &trans       &kp PLUS    &kp LBKT      &kp LBRC   &kp LPAR   &kp AMPS    &trans       &trans      &kp PIPE     &kp RPAR   &kp RBRC   &kp RBKT    &kp STAR    &trans
                                          &trans     &trans     &trans      &trans       &kp SPACE   &trans       &trans     &trans
             >;
@@ -137,22 +163,22 @@
         raise_layer {
             display-name = "Raise";
             bindings = <
-//    ┌──────┬────────────────┬────────────────┬──────────────┬────────────────┬──────────┐                                        ┌────────┬──────┬──────┬──────┬─────┬─────┐
-//    │      │    bt_sel 0    │    bt_sel 1    │   bt_sel 2   │    bt_sel 3    │ bt_sel 4 │                                        │ to RPD │      │      │      │     │     │
-//    ├──────┼────────────────┼────────────────┼──────────────┼────────────────┼──────────┤                                        ├────────┼──────┼──────┼──────┼─────┼─────┤
-//    │      │ &msc SCRL_left │ &msc SCRL_down │ &msc SCRL_up │ &msc SCRL_rght │          │                                        │        │ lclk │ mclk │ rclk │     │     │
-//    ├──────┼────────────────┼────────────────┼──────────────┼────────────────┼──────────┤                                        ├────────┼──────┼──────┼──────┼─────┼─────┤
-//    │ caps │ &mmv MOVE_left │ &mmv MOVE_down │ &mmv MOVE_up │ &mmv MOVE_rght │          │                                        │  left  │ down │  up  │ rght │     │     │
-//    ├──────┼────────────────┼────────────────┼──────────────┼────────────────┼──────────┼─────────────────────────────┐   ┌──────┼────────┼──────┼──────┼──────┼─────┼─────┤
-//    │      │                │                │              │                │          │            boot             │   │ boot │        │      │      │      │     │     │
-//    └──────┴────────────────┴────────────────┼──────────────┼────────────────┼──────────┼─────────────────────────────┤   ├──────┼────────┼──────┼──────┼──────┴─────┴─────┘
-//                                             │   tog RPD    │                │          │ &thumb_layer RaiseRaise spc │   │      │        │      │      │
-//                                             └──────────────┴────────────────┴──────────┴─────────────────────────────┘   └──────┴────────┴──────┴──────┘
-  &trans     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2   &bt BT_SEL 3      &bt BT_SEL 4                                                     &to RPD    &trans      &trans      &trans      &trans   &trans
-  &trans     &msc SCRL_LEFT   &msc SCRL_DOWN   &msc SCRL_UP   &msc SCRL_RIGHT   &trans                                                           &trans     &mkp LCLK   &mkp MCLK   &mkp RCLK   &trans   &trans
-  &kp CAPS   &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   &trans                                                           &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &trans   &trans
-  &trans     &trans           &trans           &trans         &trans            &trans         &bootloader                         &bootloader   &trans     &trans      &trans      &trans      &trans   &trans
-                                               &tog RPD       &trans            &trans         &thumb_layer RaiseRaise SPACE       &trans        &trans     &trans      &trans
+//    ┌──────┬────────────────┬────────────────┬──────────────┬────────────────┬──────────┐                                        ┌───────────┬──────┬──────┬──────┬─────┬─────┐
+//    │      │    bt_sel 0    │    bt_sel 1    │   bt_sel 2   │    bt_sel 3    │ bt_sel 4 │                                        │ to QWERTY │      │      │      │     │     │
+//    ├──────┼────────────────┼────────────────┼──────────────┼────────────────┼──────────┤                                        ├───────────┼──────┼──────┼──────┼─────┼─────┤
+//    │      │ &msc SCRL_left │ &msc SCRL_down │ &msc SCRL_up │ &msc SCRL_rght │          │                                        │           │ lclk │ mclk │ rclk │     │     │
+//    ├──────┼────────────────┼────────────────┼──────────────┼────────────────┼──────────┤                                        ├───────────┼──────┼──────┼──────┼─────┼─────┤
+//    │ caps │ &mmv MOVE_left │ &mmv MOVE_down │ &mmv MOVE_up │ &mmv MOVE_rght │          │                                        │   left    │ down │  up  │ rght │     │     │
+//    ├──────┼────────────────┼────────────────┼──────────────┼────────────────┼──────────┼─────────────────────────────┐   ┌──────┼───────────┼──────┼──────┼──────┼─────┼─────┤
+//    │      │                │                │              │                │          │            boot             │   │ boot │           │      │      │      │     │     │
+//    └──────┴────────────────┴────────────────┼──────────────┼────────────────┼──────────┼─────────────────────────────┤   ├──────┼───────────┼──────┼──────┼──────┴─────┴─────┘
+//                                             │   tog RPD    │      lsft      │          │ &thumb_layer RaiseRaise spc │   │      │           │      │      │
+//                                             └──────────────┴────────────────┴──────────┴─────────────────────────────┘   └──────┴───────────┴──────┴──────┘
+  &trans     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2   &bt BT_SEL 3      &bt BT_SEL 4                                                     &to QWERTY   &trans      &trans      &trans      &trans   &trans
+  &trans     &msc SCRL_LEFT   &msc SCRL_DOWN   &msc SCRL_UP   &msc SCRL_RIGHT   &trans                                                           &trans       &mkp LCLK   &mkp MCLK   &mkp RCLK   &trans   &trans
+  &kp CAPS   &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   &trans                                                           &kp LEFT     &kp DOWN    &kp UP      &kp RIGHT   &trans   &trans
+  &trans     &trans           &trans           &trans         &trans            &trans         &bootloader                         &bootloader   &trans       &trans      &trans      &trans      &trans   &trans
+                                               &tog RPD       &kp LSHFT         &trans         &thumb_layer RaiseRaise SPACE       &trans        &trans       &trans      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
