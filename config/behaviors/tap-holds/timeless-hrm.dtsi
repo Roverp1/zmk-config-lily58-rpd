@@ -1,0 +1,61 @@
+#include "../constants.dtsi"
+
+/ {
+  behaviors {
+    thrm_l: home_row_mods_left {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      bindings = <&kp>, <&kp>;
+
+      flavor = "balanced";
+      tapping-term-ms = <DEFAULT_TAPPING_TERM>;
+      quick-tap-ms = <DEFAULT_QUICK_TAP>;
+      require-prior-idle-ms = <DEFAULT_PRIOR_IDLE>;
+
+      hold-trigger-key-positions = <KEYS_R KEYS_THUMBS>;
+      hold-trigger-on-release;
+    };
+
+    thrm_r: home_row_mods_right  {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      bindings = <&kp>, <&kp>;
+
+      flavor = "balanced";
+      tapping-term-ms = <DEFAULT_TAPPING_TERM>;
+      quick-tap-ms = <DEFAULT_QUICK_TAP>;
+      require-prior-idle-ms = <DEFAULT_PRIOR_IDLE>;
+
+      hold-trigger-key-positions = <KEYS_L KEYS_THUMBS>;
+      hold-trigger-on-release;
+    };
+
+    thrm_sft_l: home_row_mods_shift_left {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      bindings = <&kp>, <&kp>;
+
+      flavor = "balanced";
+      tapping-term-ms = <DEFAULT_TAPPING_TERM>;
+      quick-tap-ms = <DEFAULT_QUICK_TAP>;
+      require-prior-idle-ms = <HRM_PRIOR_IDLE_SFT>;
+
+      hold-trigger-key-positions = <KEYS_R KEYS_THUMBS>;
+      hold-trigger-on-release;
+    };
+
+    thrm_sft_r: home_row_mods_shift_right {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      bindings = <&kp>, <&kp>;
+
+      flavor = "balanced";
+      tapping-term-ms = <DEFAULT_TAPPING_TERM>;
+      quick-tap-ms = <DEFAULT_QUICK_TAP>;
+      require-prior-idle-ms = <HRM_PRIOR_IDLE_SFT>;
+
+      hold-trigger-key-positions = <KEYS_L KEYS_THUMBS>;
+      hold-trigger-on-release;
+    };
+  };
+};
