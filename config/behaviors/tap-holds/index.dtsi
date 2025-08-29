@@ -13,7 +13,7 @@
       require-prior-idle-ms = <DEFAULT_PRIOR_IDLE>;
     };
 
-    thumb_layer_toggle: thumb_layer_toggle {
+    thumb_layer_tog: thumb_layer_tog {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       bindings = <&mo>, <&tog>;
