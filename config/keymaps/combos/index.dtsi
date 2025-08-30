@@ -7,7 +7,7 @@
         compatible = "zmk,combos";
 
         combo_switch_lang_on_os_rpd {
-            timeout-ms = <150>;
+            timeout-ms = <100>;
             require-prior-idle-ms = <DEFAULT_PRIOR_IDLE>;
             layers = <QWERTY QWERTYWithRpdLower>;
             key-positions = <RM4 LB4 RB3>;

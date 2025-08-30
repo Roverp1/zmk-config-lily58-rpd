@@ -5,8 +5,8 @@
             #binding-cells = <0>;
             wait-ms = <10>;
             bindings
-                = <&macro_press &kp RALT &kp RSHFT>
-                , <&macro_release &kp RALT &kp RSHFT>
+                = <&macro_press &kp RSHFT &kp RALT>
+                , <&macro_release &kp RSHFT &kp RALT>
                 , <&macro_tap &tog QWERTYWithRpdLower>
                 ;
         };
