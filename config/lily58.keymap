@@ -14,15 +14,16 @@
 #include "behaviors/tap-holds/index.dtsi"
 
 #define QWERTY            0
-#define GamingQWERTY      1
-#define RPD               2
-#define GamingRPD         3
-#define LOWER             4
-#define RAISE             5
-#define LowerLower        6
-#define RaiseRaise        7
-#define RightSide         8
-#define LowerQwertyToRpd  9
+#define QWERTYWithRpdLower 1
+#define GamingQWERTY      2
+#define RPD               3
+#define GamingRPD         4
+#define LOWER             5
+#define RAISE             6
+#define LowerLower        7
+#define RaiseRaise        8
+#define RightSide         9
+#define LowerForOsRpd  10
 
 
 
@@ -61,6 +62,32 @@
   &kp LSHFT   &thrm_l LGUI A   &thrm_l LALT S   &thrm_sft_l LSHFT D   &thrm_l LCTRL F   &kp G                                 &kp H       &thrm_r RCTRL J   &thrm_sft_r LSHFT K   &thrm_r LALT L   &thrm_r RGUI SEMI   &kp SQT
   &kp LCTRL   &kp Z            &kp X            &kp C                 &kp V             &kp B       &trans          &trans    &kp N       &kp M             &kp COMMA             &kp DOT          &kp FSLH            &kp RSHFT
                                                 &kp LGUI              &kp LALT          &mo LOWER   &kp SPACE       &kp RET   &mo RAISE   &kp RCTRL         &kp RALT
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+      };
+
+        qwerty_with_rpd_lower {
+            // same as qwerty but with lower_qwerty_to_rpd lower layer
+            // only used with system rpd remap
+            display-name = "qwerty with rpd lower";
+            bindings = <
+//    ┌──────┬────────────────┬────────────────┬────────────────────┬────────────────┬──────────────────┐               ┌────────────┬────────────────┬────────────────────┬────────────────┬────────────────┬──────┐
+//    │ esc  │       1        │       2        │         3          │       4        │        5         │               │     6      │       7        │         8          │       9        │       0        │ bspc │
+//    ├──────┼────────────────┼────────────────┼────────────────────┼────────────────┼──────────────────┤               ├────────────┼────────────────┼────────────────────┼────────────────┼────────────────┼──────┤
+//    │ tab  │       Q        │       W        │         E          │       R        │        T         │               │     Y      │       U        │         I          │       O        │       P        │  [   │
+//    ├──────┼────────────────┼────────────────┼────────────────────┼────────────────┼──────────────────┤               ├────────────┼────────────────┼────────────────────┼────────────────┼────────────────┼──────┤
+//    │ lsft │ &thrm_l lgui A │ &thrm_l lalt S │ &thrm_sft_l lsft D │ &thrm_l lctl F │        G         │               │     H      │ &thrm_r rctl J │ &thrm_sft_r lsft K │ &thrm_r lalt L │ &thrm_r rgui ; │  '   │
+//    ├──────┼────────────────┼────────────────┼────────────────────┼────────────────┼──────────────────┼─────┐   ┌─────┼────────────┼────────────────┼────────────────────┼────────────────┼────────────────┼──────┤
+//    │ lctl │       Z        │       X        │         C          │       V        │        B         │     │   │     │     N      │       M        │         ,          │       .        │       /        │ rsft │
+//    └──────┴────────────────┴────────────────┼────────────────────┼────────────────┼──────────────────┼─────┤   ├─────┼────────────┼────────────────┼────────────────────┼────────────────┴────────────────┴──────┘
+//                                             │        lgui        │      lalt      │ mo LowerForOsRpd │ spc │   │ ent │ mo raltISE │      rctl      │        ralt        │
+//                                             └────────────────────┴────────────────┴──────────────────┴─────┘   └─────┴────────────┴────────────────┴────────────────────┘
+  &kp ESC     &kp N1           &kp N2           &kp N3                &kp N4            &kp N5                                        &kp N6      &kp N7            &kp N8                &kp N9           &kp N0              &kp BSPC
+  &kp TAB     &kp Q            &kp W            &kp E                 &kp R             &kp T                                         &kp Y       &kp U             &kp I                 &kp O            &kp P               &kp LEFT_BRACKET
+  &kp LSHFT   &thrm_l LGUI A   &thrm_l LALT S   &thrm_sft_l LSHFT D   &thrm_l LCTRL F   &kp G                                         &kp H       &thrm_r RCTRL J   &thrm_sft_r LSHFT K   &thrm_r LALT L   &thrm_r RGUI SEMI   &kp SQT
+  &kp LCTRL   &kp Z            &kp X            &kp C                 &kp V             &kp B               &trans          &trans    &kp N       &kp M             &kp COMMA             &kp DOT          &kp FSLH            &kp RSHFT
+                                                &kp LGUI              &kp LALT          &mo LowerForOsRpd   &kp SPACE       &kp RET   &mo RAISE   &kp RCTRL         &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -235,14 +262,14 @@
         };
 
 
-        lower_qwerty_to_rpd {
+        lower_for_os_rpd {
             // this layer only exists to be remaped into a regular LOWER by systems rpd layout
-            display-name = "Lower";
+            display-name = "Lower for os rpd";
             bindings = <
 //    ┌─────┬────┬────┬─────┬─────┬─────┐               ┌─────┬─────┬─────┬─────┬─────┬─────┐
 //    │ f1  │ f2 │ f3 │ f4  │ f5  │ f6  │               │ f7  │ f8  │ f9  │ f10 │ f11 │ f12 │
 //    ├─────┼────┼────┼─────┼─────┼─────┤               ├─────┼─────┼─────┼─────┼─────┼─────┤
-//    │  `  │ ~  │ _  │  -  │  \  │  W  │               │  E  │  |  │  =  │  +  │  }  │  =  │
+//    │  `  │ ~  │ _  │  -  │  \  │  W  │               │  E  │  |  │  =  │  +  │  }  │  [  │
 //    ├─────┼────┼────┼─────┼─────┼─────┤               ├─────┼─────┼─────┼─────┼─────┼─────┤
 //    │     │ 1  │ 2  │  3  │  4  │  5  │               │  6  │  7  │  8  │  9  │  0  │  -  │
 //    ├─────┼────┼────┼─────┼─────┼─────┼─────┐   ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┤
@@ -251,7 +278,7 @@
 //                    │     │     │     │     │   │ spc │     │     │     │
 //                    └─────┴─────┴─────┴─────┘   └─────┴─────┴─────┴─────┘
   &kp F1      &kp F2      &kp F3      &kp F4      &kp F5       &kp F6                                 &kp F7      &kp F8     &kp F9      &kp F10    &kp F11    &kp F12
-  &kp GRAVE   &kp TILDE   &kp UNDER   &kp MINUS   &kp BSLH     &kp W                                  &kp E       &kp PIPE   &kp EQUAL   &kp PLUS   &kp RBRC   &kp EQUAL
+  &kp GRAVE   &kp TILDE   &kp UNDER   &kp MINUS   &kp BSLH     &kp W                                  &kp E       &kp PIPE   &kp EQUAL   &kp PLUS   &kp RBRC   &kp LBKT
   &trans      &kp N1      &kp N2      &kp N3      &kp N4       &kp N5                                 &kp N6      &kp N7     &kp N8      &kp N9     &kp N0     &kp MINUS
   &trans      &kp EXCL    &kp AT      &kp HASH    &kp DOLLAR   &kp PERCENT   &trans       &trans      &kp CARET   &kp AMPS   &kp STAR    &kp LPAR   &kp RPAR   &trans
                                       &trans      &trans       &trans        &trans       &kp SPACE   &trans      &trans     &trans
