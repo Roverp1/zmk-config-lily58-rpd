@@ -21,5 +21,16 @@
       quick-tap-ms = <DEFAULT_QUICK_TAP>;
       require-prior-idle-ms = <DEFAULT_PRIOR_IDLE>;
     };
+
+    thumb_layer_sticky: thumb_layer_sticky {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      bindings = <&mo>, <&sl>;
+
+      flavor = "balanced";
+      tapping-term-ms = <DEFAULT_TAPPING_TERM>;
+      quick-tap-ms = <DEFAULT_QUICK_TAP>;
+      require-prior-idle-ms = <DEFAULT_PRIOR_IDLE>;
+    };
   };
 };

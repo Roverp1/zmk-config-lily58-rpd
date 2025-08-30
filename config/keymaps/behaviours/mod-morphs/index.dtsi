@@ -1,0 +1,16 @@
+#define LALT_MORPH(name, base_key, alt_key) \
+    name: name { \
+    compatible = "zmk,behavior-mod-morph"; \
+    #binding-cells = <0>; \
+    bindings = <&kp base_key>, <&kp alt_key>; \
+    mods = <(MOD_LALT)>; \
+};
+
+/ {
+    behaviors {
+        LALT_MORPH(q_h_morph, Q, H)
+        LALT_MORPH(e_j_morph, E, J)
+        LALT_MORPH(r_k_morph, R, K)
+        LALT_MORPH(f_u_morph, F, U)
+    };
+};
