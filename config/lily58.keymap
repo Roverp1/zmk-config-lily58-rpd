@@ -151,11 +151,11 @@
 //    └──────┴─────┴─────┼──────┼──────┼─────┼─────┤   ├─────┼────────────┼──────┼──────┼───┴───┴──────┘
 //                       │ lgui │ lalt │     │ spc │   │ ent │ mo raltISE │ rctl │ ralt │
 //                       └──────┴──────┴─────┴─────┘   └─────┴────────────┴──────┴──────┘
-  &kp ESC     &kp N6   &kp N7   &kp N8     &kp N9     &kp N0                             &kp N6      &kp N7      &kp N8      &kp N9    &kp N0     &kp BSPC
-  &kp TAB     &kp Y    &trans   &kp I      &kp O      &kp P                              &kp Y       &kp U       &kp I       &kp O     &kp P      &kp LEFT_BRACKET
-  &kp LSHFT   &trans   &trans   &trans     &kp L      &kp ;                              &kp H       &kp J       &kp K       &kp L     &kp SEMI   &kp SQT
-  &kp LCTRL   &kp N    &kp M    &kp ,      &kp .      &kp /    &trans          &trans    &kp N       &kp M       &kp COMMA   &kp DOT   &kp FSLH   &kp RSHFT
-                                &kp LGUI   &kp LALT   &trans   &kp SPACE       &kp RET   &mo RAISE   &kp RCTRL   &kp RALT
+  &kp ESC     &kp N6   &kp N7   &kp N8      &kp N9       &kp N0                               &kp N6      &kp N7      &kp N8      &kp N9    &kp N0     &kp BSPC
+  &kp TAB     &kp Y    &trans   &kp I       &kp O        &kp P                                &kp Y       &kp U       &kp I       &kp O     &kp P      &kp LEFT_BRACKET
+  &kp LSHFT   &trans   &trans   &trans      &kp L        &kp SEMI                             &kp H       &kp J       &kp K       &kp L     &kp SEMI   &kp SQT
+  &kp LCTRL   &kp N    &kp M    &kp COMMA   &kp PERIOD   &kp FSLH   &trans          &trans    &kp N       &kp M       &kp COMMA   &kp DOT   &kp FSLH   &kp RSHFT
+                                &kp LGUI    &kp LALT     &trans     &kp SPACE       &kp RET   &mo RAISE   &kp RCTRL   &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
