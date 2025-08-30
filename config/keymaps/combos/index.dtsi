@@ -1,3 +1,5 @@
+#include "zmk-helpers/key-labels/lily58.h"
+
 #include "../constants.dtsi"
 #include "../behaviours/macros/index.dtsi"
 
