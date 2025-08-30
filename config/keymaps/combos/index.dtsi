@@ -10,7 +10,7 @@
             timeout-ms = <150>;
             require-prior-idle-ms = <DEFAULT_PRIOR_IDLE>;
             layers = <QWERTY QWERTYWithRpdLower>;
-            key-positions = <RM4 LB4 RB3 RM1>;
+            key-positions = <RM4 LB4 RB3>;
             bindings = <&macro_lang_switch_on_os_rpd>;
         };
     };
