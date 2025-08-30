@@ -1,5 +1,3 @@
-#include "../../constants.dtsi"
-
 / {
     macros {
         macro_lang_switch_on_os_rpd: language_switch_on_os_rpd {

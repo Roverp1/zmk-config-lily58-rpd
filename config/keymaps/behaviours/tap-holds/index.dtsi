@@ -1,5 +1,3 @@
-#include "../../constants.dtsi"
-
 / {
   behaviors {
     thumb_layer_tap: thumb_layer_tap {

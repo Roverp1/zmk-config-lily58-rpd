@@ -1,5 +1,3 @@
-#include "../../constants.dtsi"
-
 / {
   behaviors {
     thrm_l: home_row_mods_left {
