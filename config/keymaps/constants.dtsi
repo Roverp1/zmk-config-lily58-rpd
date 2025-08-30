@@ -2,6 +2,21 @@
 // SHARED CONSTANTS FOR ALL BEHAVIORS
 // =============================================================================
 
+
+// layer defenitions
+#define QWERTY              0
+#define QWERTYWithRpdLower  1
+#define GamingQWERTY        2
+#define RPD                 3
+#define GamingRPD           4
+#define LOWER               5
+#define RAISE               6
+#define LowerLower          7
+#define RaiseRaise          8
+#define RightSide           9
+#define LowerForOsRpd       10
+
+
 // Default timing constants for hold-tap behaviors
 #define DEFAULT_TAPPING_TERM 300
 #define DEFAULT_QUICK_TAP 170

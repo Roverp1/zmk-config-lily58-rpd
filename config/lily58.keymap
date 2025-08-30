@@ -9,21 +9,10 @@
 
 #include "zmk-helpers/helper.h"
 
+#include "keymaps/constants.dtsi"
 #include "keymaps/behaviours/mod-morphs/rpd-mod-morphs.dtsi"
 #include "keymaps/behaviours/tap-holds/timeless-hrm.dtsi"
 #include "keymaps/behaviours/tap-holds/index.dtsi"
-
-#define QWERTY            0
-#define QWERTYWithRpdLower 1
-#define GamingQWERTY      2
-#define RPD               3
-#define GamingRPD         4
-#define LOWER             5
-#define RAISE             6
-#define LowerLower        7
-#define RaiseRaise        8
-#define RightSide         9
-#define LowerForOsRpd  10
 
 
 
