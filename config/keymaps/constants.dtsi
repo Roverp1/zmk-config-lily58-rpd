@@ -11,10 +11,11 @@
 #define RightSideQWERTY     4
 #define RPD                 5
 #define GamingRPD           6
-#define LOWER               7
-#define RAISE               8
-#define LowerLower          9
-#define RaiseRaise          10
+#define RightSideRPD        7
+#define LOWER               8
+#define RAISE               9
+#define LowerLower          10
+#define RaiseRaise          11
 
 
 // Default timing constants for hold-tap behaviors
