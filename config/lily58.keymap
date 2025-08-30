@@ -10,6 +10,7 @@
 #include "zmk-helpers/helper.h"
 
 #include "keymaps/constants.dtsi"
+#include "keymaps/combos/index.dtsi"
 #include "keymaps/behaviours/mod-morphs/rpd-mod-morphs.dtsi"
 #include "keymaps/behaviours/tap-holds/timeless-hrm.dtsi"
 #include "keymaps/behaviours/tap-holds/index.dtsi"

@@ -2,7 +2,7 @@
 
 / {
     macros {
-        language_switch_on_os_rpd: language_switch_on_os_rpd {
+        macro_lang_switch_on_os_rpd: language_switch_on_os_rpd {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
