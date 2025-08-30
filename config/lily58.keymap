@@ -9,9 +9,9 @@
 
 #include "zmk-helpers/helper.h"
 
-#include "behaviors/mod-morphs/rpd-mod-morphs.dtsi"
-#include "behaviors/tap-holds/timeless-hrm.dtsi"
-#include "behaviors/tap-holds/index.dtsi"
+#include "keymaps/behaviours/mod-morphs/rpd-mod-morphs.dtsi"
+#include "keymaps/behaviours/tap-holds/timeless-hrm.dtsi"
+#include "keymaps/behaviours/tap-holds/index.dtsi"
 
 #define QWERTY            0
 #define QWERTYWithRpdLower 1

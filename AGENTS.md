@@ -6,7 +6,7 @@
 - **Validate syntax**: ZMK build will catch devicetree syntax errors
 
 ## Code Style Guidelines
-- **File structure**: Main keymap in `config/lily58.keymap`, behaviors in `config/behaviors/`
+- **File structure**: Main keymap in `config/lily58.keymap`, behaviors in `config/keymaps/behaviours/`, constants in `config/keymaps/constants.dtsi`
 - **Includes**: Always include `<behaviors.dtsi>` and `<dt-bindings/zmk/keys.h>` at top
 - **Naming**: Use SCREAMING_SNAKE_CASE for layer defines, snake_case for behavior nodes
 - **Comments**: Use C-style comments (`//` or `/* */`). Include ASCII art for visual layouts
