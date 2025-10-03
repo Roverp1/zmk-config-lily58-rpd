@@ -245,13 +245,13 @@
 //    ├─────┼────┼────┼─────┼─────┼─────┼─────┐   ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┤
 //    │     │ +  │ [  │  {  │  (  │  &  │     │   │     │  |  │  )  │  }  │  ]  │  *  │     │
 //    └─────┴────┴────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┴─────┴─────┘
-//                    │     │     │     │     │   │ spc │     │     │     │
+//                    │     │     │     │     │   │ ent │     │     │     │
 //                    └─────┴─────┴─────┴─────┘   └─────┴─────┴─────┴─────┘
-  &kp F1       &kp F2      &kp F3        &kp F4     &kp F5     &kp F6                               &kp F7       &kp F8     &kp F9     &kp F10     &kp F11     &kp F12
-  &kp DOLLAR   &kp TILDE   &kp PERCENT   &kp EXCL   &kp BSLH   &kp COMMA                            &kp PERIOD   &kp HASH   &kp AT     &kp CARET   &kp GRAVE   &kp EQUAL
-  &trans       &kp N1      &kp N2        &kp N3     &kp N4     &kp N5                               &kp N6       &kp N7     &kp N8     &kp N9      &kp N0      &kp MINUS
-  &trans       &kp PLUS    &kp LBKT      &kp LBRC   &kp LPAR   &kp AMPS    &trans       &trans      &kp PIPE     &kp RPAR   &kp RBRC   &kp RBKT    &kp STAR    &trans
-                                         &trans     &trans     &trans      &trans       &kp SPACE   &trans       &trans     &trans
+  &kp F1       &kp F2      &kp F3        &kp F4     &kp F5     &kp F6                             &kp F7       &kp F8     &kp F9     &kp F10     &kp F11     &kp F12
+  &kp DOLLAR   &kp TILDE   &kp PERCENT   &kp EXCL   &kp BSLH   &kp COMMA                          &kp PERIOD   &kp HASH   &kp AT     &kp CARET   &kp GRAVE   &kp EQUAL
+  &trans       &kp N1      &kp N2        &kp N3     &kp N4     &kp N5                             &kp N6       &kp N7     &kp N8     &kp N9      &kp N0      &kp MINUS
+  &trans       &kp PLUS    &kp LBKT      &kp LBRC   &kp LPAR   &kp AMPS    &trans       &trans    &kp PIPE     &kp RPAR   &kp RBRC   &kp RBKT    &kp STAR    &trans
+                                         &trans     &trans     &trans      &trans       &kp RET   &trans       &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -260,22 +260,22 @@
         raise_layer {
             display-name = "Raise";
             bindings = <
-//    ┌──────┬────────────────┬────────────────┬──────────────┬────────────────┬──────────┐                                            ┌───────────┬────────────────────────┬─────────┬──────────────────┬───────────────┬─────┐
-//    │      │    bt_sel 0    │    bt_sel 1    │   bt_sel 2   │    bt_sel 3    │ bt_sel 4 │                                            │ to QWERTY │ tog QWERTYWithRpdLower │ tog RPD │ tog GamingQWERTY │ tog GamingRPD │     │
-//    ├──────┼────────────────┼────────────────┼──────────────┼────────────────┼──────────┤                                            ├───────────┼────────────────────────┼─────────┼──────────────────┼───────────────┼─────┤
-//    │      │ &msc SCRL_left │ &msc SCRL_down │ &msc SCRL_up │ &msc SCRL_rght │          │                                            │           │          lclk          │  mclk   │       rclk       │               │     │
-//    ├──────┼────────────────┼────────────────┼──────────────┼────────────────┼──────────┤                                            ├───────────┼────────────────────────┼─────────┼──────────────────┼───────────────┼─────┤
-//    │ caps │ &mmv MOVE_left │ &mmv MOVE_down │ &mmv MOVE_up │ &mmv MOVE_rght │          │                                            │   left    │          down          │   up    │       rght       │               │     │
-//    ├──────┼────────────────┼────────────────┼──────────────┼────────────────┼──────────┼─────────────────────────────────┐   ┌──────┼───────────┼────────────────────────┼─────────┼──────────────────┼───────────────┼─────┤
-//    │      │                │                │              │                │          │              boot               │   │ boot │           │                        │         │                  │               │     │
-//    └──────┴────────────────┴────────────────┼──────────────┼────────────────┼──────────┼─────────────────────────────────┤   ├──────┼───────────┼────────────────────────┼─────────┼──────────────────┴───────────────┴─────┘
-//                                             │   tog RPD    │      lsft      │          │ &thumb_layer_tap RaiseRaise spc │   │      │           │                        │         │
-//                                             └──────────────┴────────────────┴──────────┴─────────────────────────────────┘   └──────┴───────────┴────────────────────────┴─────────┘
-  &trans     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2   &bt BT_SEL 3      &bt BT_SEL 4                                                         &to QWERTY   &tog QWERTYWithRpdLower   &tog RPD    &tog GamingQWERTY   &tog GamingRPD   &trans
-  &trans     &msc SCRL_LEFT   &msc SCRL_DOWN   &msc SCRL_UP   &msc SCRL_RIGHT   &trans                                                               &trans       &mkp LCLK                 &mkp MCLK   &mkp RCLK           &trans           &trans
-  &kp CAPS   &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   &trans                                                               &kp LEFT     &kp DOWN                  &kp UP      &kp RIGHT           &trans           &trans
-  &trans     &trans           &trans           &trans         &trans            &trans         &bootloader                             &bootloader   &trans       &trans                    &trans      &trans              &trans           &trans
-                                               &tog RPD       &kp LSHFT         &trans         &thumb_layer_tap RaiseRaise SPACE       &trans        &trans       &trans                    &trans
+//    ┌─────┬────────────────┬────────────────┬──────────────┬────────────────┬──────────┐                                            ┌───────────┬────────────────────────┬─────────┬──────────────────┬───────────────┬─────┐
+//    │     │    bt_sel 0    │    bt_sel 1    │   bt_sel 2   │    bt_sel 3    │ bt_sel 4 │                                            │ to QWERTY │ tog QWERTYWithRpdLower │ tog RPD │ tog GamingQWERTY │ tog GamingRPD │     │
+//    ├─────┼────────────────┼────────────────┼──────────────┼────────────────┼──────────┤                                            ├───────────┼────────────────────────┼─────────┼──────────────────┼───────────────┼─────┤
+//    │     │ &msc SCRL_left │ &msc SCRL_down │ &msc SCRL_up │ &msc SCRL_rght │          │                                            │           │          lclk          │  mclk   │       rclk       │               │     │
+//    ├─────┼────────────────┼────────────────┼──────────────┼────────────────┼──────────┤                                            ├───────────┼────────────────────────┼─────────┼──────────────────┼───────────────┼─────┤
+//    │     │ &mmv MOVE_left │ &mmv MOVE_down │ &mmv MOVE_up │ &mmv MOVE_rght │          │                                            │   left    │          down          │   up    │       rght       │               │     │
+//    ├─────┼────────────────┼────────────────┼──────────────┼────────────────┼──────────┼─────────────────────────────────┐   ┌──────┼───────────┼────────────────────────┼─────────┼──────────────────┼───────────────┼─────┤
+//    │     │                │                │              │                │          │              boot               │   │ boot │           │                        │         │                  │               │     │
+//    └─────┴────────────────┴────────────────┼──────────────┼────────────────┼──────────┼─────────────────────────────────┤   ├──────┼───────────┼────────────────────────┼─────────┼──────────────────┴───────────────┴─────┘
+//                                            │   tog RPD    │      lsft      │          │ &thumb_layer_tap RaiseRaise spc │   │      │           │                        │         │
+//                                            └──────────────┴────────────────┴──────────┴─────────────────────────────────┘   └──────┴───────────┴────────────────────────┴─────────┘
+  &trans   &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2   &bt BT_SEL 3      &bt BT_SEL 4                                                         &to QWERTY   &tog QWERTYWithRpdLower   &tog RPD    &tog GamingQWERTY   &tog GamingRPD   &trans
+  &trans   &msc SCRL_LEFT   &msc SCRL_DOWN   &msc SCRL_UP   &msc SCRL_RIGHT   &trans                                                               &trans       &mkp LCLK                 &mkp MCLK   &mkp RCLK           &trans           &trans
+  &trans   &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   &trans                                                               &kp LEFT     &kp DOWN                  &kp UP      &kp RIGHT           &trans           &trans
+  &trans   &trans           &trans           &trans         &trans            &trans         &bootloader                             &bootloader   &trans       &trans                    &trans      &trans              &trans           &trans
+                                             &tog RPD       &kp LSHFT         &trans         &thumb_layer_tap RaiseRaise SPACE       &trans        &trans       &trans                    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -308,19 +308,19 @@
         raise_raise_layer {
             display-name = "Raise-Raise";
             bindings = <
-//    ┌────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐               ┌─────┬─────┬─────┬─────┬─────┬─────┐
-//    │ bt_clr │ bt_BT_DISC 0 │ bt_BT_DISC 1 │ bt_BT_DISC 2 │ bt_BT_DISC 3 │ bt_BT_DISC 4 │               │     │     │     │     │     │     │
-//    ├────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤               ├─────┼─────┼─────┼─────┼─────┼─────┤
-//    │        │              │              │              │              │              │               │     │     │     │     │     │     │
-//    ├────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤               ├─────┼─────┼─────┼─────┼─────┼─────┤
-//    │        │              │              │              │              │              │               │     │     │     │     │     │     │
-//    ├────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼─────┐   ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-//    │        │              │              │              │              │              │     │   │     │     │     │     │     │     │     │
-//    └────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┼─────┤   ├─────┼─────┼─────┼─────┼─────┴─────┴─────┘
-//                                           │              │              │              │     │   │     │     │     │     │
-//                                           └──────────────┴──────────────┴──────────────┴─────┘   └─────┴─────┴─────┴─────┘
+//    ┌─────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐               ┌─────┬─────┬─────┬─────┬─────┬─────┐
+//    │ bt_clr  │ bt_BT_DISC 0 │ bt_BT_DISC 1 │ bt_BT_DISC 2 │ bt_BT_DISC 3 │ bt_BT_DISC 4 │               │     │     │     │     │     │     │
+//    ├─────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤               ├─────┼─────┼─────┼─────┼─────┼─────┤
+//    │ bt_caps │              │              │              │              │              │               │     │     │     │     │     │     │
+//    ├─────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤               ├─────┼─────┼─────┼─────┼─────┼─────┤
+//    │         │              │              │              │              │              │               │     │     │     │     │     │     │
+//    ├─────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼─────┐   ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+//    │         │              │              │              │              │              │     │   │     │     │     │     │     │     │     │
+//    └─────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┼─────┤   ├─────┼─────┼─────┼─────┼─────┴─────┴─────┘
+//                                            │              │              │              │     │   │     │     │     │     │
+//                                            └──────────────┴──────────────┴──────────────┴─────┘   └─────┴─────┴─────┴─────┘
   &bt BT_CLR   &bt BT_DISC 0   &bt BT_DISC 1   &bt BT_DISC 2   &bt BT_DISC 3   &bt BT_DISC 4                         &trans   &trans   &trans   &trans   &trans   &trans
-  &trans       &trans          &trans          &trans          &trans          &trans                                &trans   &trans   &trans   &trans   &trans   &trans
+  &bt CAPS     &trans          &trans          &trans          &trans          &trans                                &trans   &trans   &trans   &trans   &trans   &trans
   &trans       &trans          &trans          &trans          &trans          &trans                                &trans   &trans   &trans   &trans   &trans   &trans
   &trans       &trans          &trans          &trans          &trans          &trans          &trans       &trans   &trans   &trans   &trans   &trans   &trans   &trans
                                                &trans          &trans          &trans          &trans       &trans   &trans   &trans   &trans
